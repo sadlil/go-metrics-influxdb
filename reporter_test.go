@@ -5,6 +5,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/influxdata/influxdb/client"
 	"github.com/rcrowley/go-metrics"
 	"github.com/sadlil/metflux"
 	"github.com/stretchr/testify/assert"
