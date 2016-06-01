@@ -14,13 +14,13 @@ type Config struct {
 	Registry metrics.Registry
 
 	// Time inerval between two consicutive influxDB call to
-	// store the matrix value to the DB. If not set Default Will
+	// store the matrix value to the DB. If not set Default will
 	// be 10secs.
 	Interval time.Duration
 
-	// Time interval to make sure the connection betwwen influxDB
-	// and client are alive. if the ping failed with an error client
-	// will try to reconnect to influxDB, if thus failed will throw
+	// Time interval to make sure the connections between influxDB
+	// and client are alive. If the ping is failed with an error client
+	// will try to reconnect with influxDB, if thus failed, it will throw
 	// panics.
 	PingInterval time.Duration
 
@@ -39,10 +39,10 @@ type InfluxDB struct {
 	Username string
 	Password string
 
-	// Custom InfluxDB Tags those will be send to influxDB with every call.
+	// Custom InfluxDB Tags those will be sent to influxDB with every call.
 	Tags map[string]string
 }
 
-// Callbacks invoked after every metric read. the parameter is the metric
+// Callbacks invoked after every metric read. The parameter is the metric
 // that was read it self.
 type Callback func(interface{})
